@@ -3,7 +3,7 @@ async function getCloudMoonUrls() {
     const response = await fetch('CloudMoon.json');
     if (!response.ok) return [];
     const data = await response.json();
-    return data?.CloudMoonAPIURLS || [];
+    return data.CloudMoonAPIURLS || [];
   } catch {
     return [];
   }
