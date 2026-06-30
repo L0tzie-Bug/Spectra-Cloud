@@ -20,12 +20,30 @@ Cloud gaming service based on multiple combined services.
 
 ## Project Status
 
-- [x] API URLs
-- [ ] Design 
-- [ ] Input
-- [ ] Game Display
-- [ ] Game Lists
-- [ ] Account System
+- [ ] **Environment & API Foundation**
+  - [ ] Initialize each official API client or write custom HTTP fetch wrappers.
+  - [ ] Implement an automated token refresh mechanism to handle session expiration for each service simultaneously.
+  - [ ] Map all CloudMoon endpoints required for virtual instance provisioning.
+- [ ] **Authentication & Account Linking**
+  - [x] Implement secure encryption for storing user-specific CloudMoon session tokens.
+  - [x] Add account disconnection flows to wipe user data safely upon request.
+- [ ] **Core Game Library Aggregation**
+  - [x] Fetch the complete list of available game titles directly from the API catalog.
+  - [ ] Build a mechanism that can list all games from multiple services, behaving similarly.
+- [ ] **Session Management & Stream Launching**
+  - [ ] Create the API controller to request and initialize a new gameplay instance.
+  - [ ] Build a loading state handler to track instance spin-up times.
+  - [ ] Extract the target WebRTC stream URLs or custom stream indicators from API payload response.
+  - [ ] Design the frontend video canvas to capture and render the incoming API stream.
+- [ ] **Controller & Input Mapping**
+  - [ ] Map the standard Gamepad API inputs to match virtual control requirements.
+  - [ ] mouse and keyboard event propagation inside the active stream container.
+  - [ ] Implement touch screen overlay controls specifically optimized for CloudMoon mobile titles.
+  - [ ] Build an input latency monitoring widget to track button-to-screen response times.
+- [ ] **Session Termination & Cleanup**
+  - [ ] Handle unexpected disconnections or network drops.
+- [ ] **Multi-Service Expansion Prep**
+  - [ ] methods like `launchGame()` and `endSession()` 
 
 ## Why?
 - It helps to consolidate these services and reduce the search for such highly accessible cloud services.
