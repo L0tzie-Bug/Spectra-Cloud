@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" width="150" height="150" style="background-color: black; border-radius: 50%; padding: 15px;" alt="Project Logo">
+  <img src="https://kstuff.neocities.org/data_archive/spectra.png" width="150" height="150" style="background-color: black; border-radius: 50%; padding: 15px;" alt="Project Logo">
 </p>
 
 
