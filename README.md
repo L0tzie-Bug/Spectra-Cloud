@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://kstuff.neocities.org/data_archive/spectra.png" width="150" height="150" style="background-color: black; border-radius: 50%; padding: 15px;" alt="Project Logo">
-</p>
-
 # Spectra
 Cloud gaming service based on multiple combined services.
 
@@ -17,6 +13,7 @@ Cloud gaming service based on multiple combined services.
 - Mobile
 - PC (Windows, Linux)
 *All in the cloud on other services' Cloud Gaming API.*
+- Full VMs, those listed above with Data Saving.
 
 ## Project Status
 
@@ -37,14 +34,14 @@ Cloud gaming service based on multiple combined services.
   - [ ] Design the frontend video canvas to capture and render the incoming API stream.
 - [ ] **Controller & Input Mapping**
   - [ ] Map the standard Gamepad API inputs to match virtual control requirements.
-  - [ ] mouse and keyboard event propagation inside the active stream container.
+  - [ ] Mouse and keyboard event propagation inside the active stream container.
   - [ ] Implement touch screen overlay controls specifically optimized for CloudMoon mobile titles.
   - [ ] Build an input latency monitoring widget to track button-to-screen response times.
 - [ ] **Session Termination & Cleanup**
   - [ ] Handle unexpected disconnections or network drops.
 - [ ] **Multi-Service Expansion Prep**
-  - [ ] methods like `launchGame()` and `endSession()` 
+  - [ ] Methods like `launchGame()` and `endSession()` 
 
 ## Why?
 - It helps to consolidate these services and reduce the search for such highly accessible cloud services.
-- It's solely based on JavaScript and HTML, off of any public API URL these sites offer without CORS Protection.
+- It's solely based on JavaScript and HTML, off of any public API URL these sites offer without CORS protection.
