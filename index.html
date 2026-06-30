@@ -1,41 +1,21 @@
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spectra V2</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spectra V2</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-<h1>Spectra</h1>
-<div class="server-box">
-<h3>API Urls:</h3>
-<ul id="url-list">
-<li>Loading...</li>
-</ul>
-</div>
-</div>
-<script src="API/CloudMoon.js"></script>
-<script>
-const urlList = document.getElementById('url-list');
-const checkUrls = setInterval(() => {
-  if (window.cloudMoonUrls) {
-    clearInterval(checkUrls);
-    if (window.cloudMoonUrls.length === 0) {
-      urlList.innerHTML = '<li class="loading">No API Urls are available, bum</li>';
-      return;
-    }
-    urlList.innerHTML = window.cloudMoonUrls.map(url => 
-      `<li><a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a></li>`
-    ).join('');
-  }
-}, 50);
-setTimeout(() => {
-  if (!window.cloudMoonUrls) {
-    clearInterval(checkUrls);
-    urlList.innerHTML = '<li class="loading">Failed. ): so sad</li>';
-  }
-}, 5000);
-</script>
+  <div class="container">
+    <h1>Spectra</h1>
+    <div class="server-box">
+      <h3>API Urls:</h3>
+      <ul id="url-list">
+        <li class="loading">Loading...</li>
+      </ul>
+    </div>
+  </div>
+
+  <script type="module" src="API/CloudMoon.js"></script>
 </body>
 </html>
