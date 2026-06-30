@@ -25,7 +25,7 @@ Cloud gaming service based on multiple combined services.
   - [ ] Implement an automated token refresh mechanism to handle session expiration for each service simultaneously.
   - [ ] Map all API endpoints required for virtual instance provisioning.
 - [ ] **Authentication & Account Linking**
-  - [x] Implement secure encryption for storing user-specific CloudMoon session tokens.
+  - [x] Implement secure encryption for storing user-specific session tokens.
   - [x] Add account disconnection flows to wipe user data safely upon request.
 - [ ] **Core Game Library Aggregation**
   - [x] Fetch the complete list of available game titles directly from the API catalog.
