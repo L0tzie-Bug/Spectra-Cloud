@@ -1,6 +1,6 @@
 (async function loadCloudMoonUrls() {
   try {
-    const response = await fetch('/Spectra/API/CloudMoon.json');
+    const response = await fetch('/Spectra-Cloud/API/CloudMoon.json');
     if (!response.ok) return null;
     const data = await response.json();
     const urls = data.CloudMoonAPIURLS || [];
