@@ -26,8 +26,8 @@
 
 async function SetupCloudMoonToken(selectedServer) {
   try {
-    const email = localStorage.getItem("email");
-    const password = localStorage.getItem("password");
+    const email = localStorage.getItem("cloudmoonemail");
+    const password = localStorage.getItem("cloudmoonpassword");
     if (!email || !password) return;
     const baseUrl = window.workingCloudMoonUrl || "";
     const workingUrl = baseUrl.endsWith("/") ? `${baseUrl}login/pwd` : `${baseUrl}/login/pwd`;
