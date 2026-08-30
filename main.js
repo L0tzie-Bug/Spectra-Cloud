@@ -855,6 +855,46 @@ function setupCloudInput() {
   };
 }
 
+const GAMEPAD_BTN_MASK = [4096, 8192, 16384, 32768, 256, 512, 0, 0, 32, 16, 64, 128, 1, 2, 4, 8, 0];
+
+function sendGamepad() {
+  if (!_cloudInputActive || !_cloudDc || _cloudDc.readyState !== "open") return;
+  const gamepads = navigator.getGamepads?.() || [];
+  for (let i = 0; i < gamepads.length; i++) {
+    const gp = gamepads[i]; 
+    if (!gp) continue;
+    let mask = 0, lt = 0, rt = 0;
+    for (let b = 0; b < Math.min(gp.buttons.length, 17); b++) {
+      const btn = gp.buttons[b];
+      const pressed = typeof btn === "object" ? btn.pressed : btn > 0;
+      const value = typeof btn === "object" ? btn.value : btn;
+      if (pressed) {
+        if (b === 6) lt = Math.round(value * 255);
+        else if (b === 7) rt = Math.round(value * 255);
+        else mask |= GAMEPAD_BTN_MASK[b];
+      }
+    }
+    const ax = gp.axes;
+    const lx = ax[0] ? Math.round(32767 * ax[0]) : 0;
+    const ly = ax[1] ? Math.round(-32767 * ax[1]) : 0;
+    const rx = ax[2] ? Math.round(32767 * ax[2]) : 0;
+    const ry = ax[3] ? Math.round(-32767 * ax[3]) : 0;
+    
+    const buf = new ArrayBuffer(17);
+    const v = new DataView(buf);
+    v.setUint8(0, 1); v.setUint8(1, 16); v.setUint8(2, 3); v.setUint8(3, 2); v.setUint8(4, i);
+    v.setUint16(5, mask); v.setUint8(7, lt); v.setUint8(8, rt);
+    v.setInt16(9, lx); v.setInt16(11, ly); v.setInt16(13, rx); v.setInt16(15, ry);
+    try { _cloudDc.send(buf); } catch {}
+  }
+}
+
+function gamepadInputLoop() {
+  sendGamepad();
+  requestAnimationFrame(gamepadInputLoop);
+}
+requestAnimationFrame(gamepadInputLoop);
+
 async function loadGames() {
   const gameList = document.getElementById('gameList');
   if(!gameList) return;
