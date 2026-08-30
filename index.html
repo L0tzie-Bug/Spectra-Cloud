@@ -16,14 +16,14 @@
     <section id="gameList" aria-live="polite"></section>
   </main>
   <div id="gamePlayer">
-    <div style="background:#111;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222; display: none;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; z-index:1000; background: transparent; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
       <div>
-        <span id="gamePlayerId" style="font-weight:bold">Cloud Game</span>
-        <span id="gamePlayerTimeLeft" style="margin-left:15px;color:#aaa"></span>
+        <span id="gamePlayerId" style="font-weight:bold;display;none;">Cloud Game</span>
+        <span id="gamePlayerTimeLeft" style="margin-left:15px;color:#aaa;background: rgba(0,0,0,0.6); padding: 4px 8px;border-radius: 4px;"></span>
       </div>
       <div>
-        <button onclick="toggleGameFullscreen()" style="background:#333;border:0;color:#fff;padding:6px 10px;border-radius:4px;cursor:pointer">Fullscreen</button>
-        <button onclick="closeGamePlayer()" style="background:#ff4d4f;border:0;color:#fff;padding:6px 10px;border-radius:4px;cursor:pointer;margin-left:8px">Quit / Close</button>
+        <button onclick="toggleGameFullscreen()" style="background:#333;border:0;color:#fff;padding:6px 10px;border-radius:4px;cursor:pointer;display:none;">Fullscreen</button>
+        <button onclick="closeGamePlayer()" style="background:#ff4d4f;border:0;color:#fff;padding:6px 10px;border-radius:4px;cursor:pointer;margin-left:8px;display:none;">Quit / Close</button>
       </div>
     </div>
     <div id="cloudVideoWrap" style="position: relative;">
