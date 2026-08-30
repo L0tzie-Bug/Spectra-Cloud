@@ -1,0 +1,47 @@
+<svg>
+<foreignObject width="100%" height="100%">
+  <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cloud Gaming</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l0tzie-bug/Spectra-Cloud/style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="controls">
+        <input type="text" id="gamesSearch" placeholder="Search games..." />
+      </div>
+    </header>
+    <main>
+      <section id="gameList" aria-live="polite"></section>
+    </main>
+    <div id="gamePlayer">
+      <div style="position: absolute; top: 0; left: 0; width: 100%; z-index:1000; background: transparent; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <span id="gamePlayerId" style="font-weight:bold;display:none;">Cloud Game</span>
+          <span id="gamePlayerTimeLeft" style="margin-left:15px;color:#aaa;background: rgba(0,0,0,0.6); padding: 4px 8px;border-radius: 4px;"></span>
+        </div>
+        <div>
+          <button onclick="toggleGameFullscreen()" style="background:#333;border:0;color:#fff;padding:6px 10px;border-radius:4px;cursor:pointer;display:none;">Fullscreen</button>
+          <button onclick="closeGamePlayer()" style="background:#ff4d4f;border:0;color:#fff;padding:6px 10px;border-radius:4px;cursor:pointer;margin-left:8px;display:none;">Quit / Close</button>
+        </div>
+      </div>
+      <div id="cloudVideoWrap" style="position: relative;">
+        <video id="cloudVideo" autoplay="autoplay" playsinline="playsinline" style="width: 100%; height: 100%;"></video>
+        <div id="cloudOverlay">
+          <div id="cloudSpinner"></div>
+          <div id="cloudPhase" style="font-size:1.2rem;font-weight:bold;margin-bottom:8px">Initializing...</div>
+          <div id="cloudPhaseDetail" class="muted">Please wait while we connect to the server.</div>
+        </div>
+        <div id="cloudRelockHint">Click here to lock mouse &amp; resume playing</div>
+        <div id="cloudUnmuteHint" style="display: none; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(255, 77, 79, 0.9); color: white; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; z-index: 100;">
+          Click here to enable Audio
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/l0tzie-bug/Spectra-Cloud/script.js"></script>
+  </body>
+  </html>
+</foreignObject>
+</svg>
