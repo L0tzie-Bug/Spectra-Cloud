@@ -650,10 +650,6 @@ async function createCloudPeer(iceServers) {
             unmuteHint.onclick = () => {
              videoEl.muted = false;
              unmuteHint.style.display = "none";
-             try {
-               const lockPromise = videoEl.requestPointerLock();
-               if (lockPromise && typeof lockPromise.catch === "function") lockPromise.catch(()=>{});
-             } catch (e) {}
             };
           }
         });
@@ -799,14 +795,6 @@ function setupCloudInput() {
     const r = getRect();
     relX = r.width / 2; relY = r.height / 2;
     cursorX = r.left + relX; cursorY = r.top + relY;
-    try {
-      const lockPromise = videoEl.requestPointerLock();
-      if (lockPromise && typeof lockPromise.catch === "function") {
-        lockPromise.catch((e) => console.warn("[PointerLock] Blocked by browser", e));
-      }
-    } catch (err) {
-      console.warn("[PointerLock] Error:", err);
-    }
   };
   
   const pointerLockChangeHandler = () => {
