@@ -548,7 +548,7 @@ async function createCloudPeer(iceServers) {
   } catch (err) {}
   
   try {
-    _cloudDc = _cloudPc.createDataChannel("JYSKD", {
+    _cloudDc = _cloudPc.createDataChannel("JYSDK", {
       id: 1,
       ordered: false,
       maxRetransmits: 0,
