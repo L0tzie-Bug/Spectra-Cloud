@@ -36,14 +36,13 @@
       * {
   font-family: &#39;Parkinsans&#39;, sans-serif;
 }  
-/* --- index.html Styles (Modern Black &amp; White Full-Screen Menu Update) --- */
 :root {      
-  --bg-main: #111111;       /* Deep modern black */      
-  --primary: #ffffff;       /* Solid white accent */      
-  --gray-dark: #161616;     /* Dark accent surfaces */      
-  --gray-medium: #2d2d30;   /* Subtle borders and inputs */      
-  --gray-light: #a1a1aa;    /* Enhanced neutral text secondary color */      
-  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); /* Apple-like easing */    
+  --bg-main: #111111;     
+  --primary: #ffffff;       
+  --gray-dark: #161616;          
+  --gray-medium: #2d2d30;      
+  --gray-light: #a1a1aa;         
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);    
 }
 
 html {      
@@ -100,7 +99,7 @@ html {
 .category-btn {       
   background-color: var(--gray-dark);       
   color: var(--gray-light);       
-  border-radius: 12px; /* Smoother edges */
+  border-radius: 12px; 
   transition: var(--transition-smooth);    
 }    
 .category-btn.active {       
@@ -112,18 +111,17 @@ html {
 .no-scrollbar::-webkit-scrollbar { display: none; }    
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* RECONFIGURED: Game card dimensions to rectangular 6-card row grid layouts */
 .game-card-item {      
   content-visibility: auto;      
   contain-intrinsic-size: 200px 260px;      
-  aspect-ratio: 16 / 9; /* More prominent, detailed rectangular frame */      
+  aspect-ratio: 16 / 9; 
   background: rgba(22, 22, 22, 0.95);      
   border: 1px solid rgba(255, 255, 255, 0.1);      
   transition: var(--transition-smooth);      
   cursor: pointer;      
   position: relative;      
   overflow: hidden;      
-  border-radius: 16px; /* Smooth elegant curves */
+  border-radius: 16px; 
 }
 
 .game-card-item:hover {      
@@ -134,14 +132,13 @@ html {
 
 }
 
-/* NO B&amp;W FILTER: Preserves native picture graphics asset colors naturally */
 .card-banner {       
   position: absolute;       
   inset: 0;       
   width: 100%;       
   height: 100%;       
   object-fit: cover;       
-  filter: none !important; /* Forces filters off completely */
+  filter: none !important;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);     
 }    
 .game-card-item:hover .card-banner { transform: scale(1.08); }
@@ -184,7 +181,7 @@ html {
   color: white;       
   width: 100%;       
   padding: 14px 22px;       
-  border-radius: 9999px; /* Smooth rounded pill inputs */      
+  border-radius: 9999px;       
   outline: none;       
   transition: var(--transition-smooth);    
 }    
@@ -194,10 +191,8 @@ html {
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);    
 }
 
-/* Global Resets for Game */    
 body { background: #000; margin: 0; overflow: hidden; color: white; }
 
-/* Layout Grid Setup */    
 .layout-wrapper {      
   display: flex;      
   flex-direction: row;      
@@ -210,14 +205,13 @@ body { background: #000; margin: 0; overflow: hidden; color: white; }
   left: 0;    
 }
 
-/* UPDATED: Sidebar-left takes full screen overlay as menu container now */    
 .sidebar-left {      
-  width: 100vw; /* Covers entire screen viewport width */     
-  position: fixed; /* Dynamic absolute view */
+  width: 100vw;     
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  background: #050505; /* Solid modern dark background */      
+  background: #050505;       
   border-right: none;      
   display: flex;      
   flex-direction: column;      
@@ -228,14 +222,12 @@ body { background: #000; margin: 0; overflow: hidden; color: white; }
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s cubic-bezier(0.16, 1, 0.3, 1), width 0.5s cubic-bezier(0.16, 1, 0.3, 1);    
 }
 
-/* FADED OUT ANIMATION: Left menu smooth opacity dissolution */
 .sidebar-left.hidden {  
   width: 100vw !important;  
   opacity: 0 !important;
   visibility: hidden !important;
 }          
 
-/* Persistent configuration wrapper preserving main right structures exactly */
 .main-right {      
   flex: 1;      
   position: relative;      
@@ -248,25 +240,23 @@ body { background: #000; margin: 0; overflow: hidden; color: white; }
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; filter: blur(30px) none !important;    
 }
 
-/* EXTRA DETAILED SELECTION GRID: Organized 6 columns dynamically */    
 .game-list { 
   flex: 1; 
   width: 100%;
   overflow-y: auto; 
   padding: 2.5rem; 
   display: grid; 
-  /* This replaces repeat(9, 1fr) */
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
   gap: 1.5rem; 
 }
 
 .game-item {       
   display: flex;       
-  flex-direction: column; /* Better layout architecture for cards */
+  flex-direction: column;
   gap: 1rem;       
   padding: 1rem;       
   height: 235px;
-  border-radius: 18px; /* Extra smooth design edges */      
+  border-radius: 18px;       
   cursor: pointer;       
   background: rgba(255, 255, 255, 0.02);
   transition: var(--transition-smooth);       
@@ -280,13 +270,12 @@ transform: translateY(-8px) scale(1.01);
 }    
 .game-item img { 
   width: 100%; 
-  height: 120px; /* Bigger vertical card image preview */
+  height: 120px; 
   object-fit: cover; 
   border-radius: 12px; 
-  filter: none !important; /* Preserves organic image color scheme */
+  filter: none !important;
 }
 
-/* Game Container */    
 .container { position: relative; width: 100%; height: 100%; background: #000; }    
 .container.has-a-div { padding: 0 180px 140px 180px; box-sizing: border-box; }    
 .container.hide-vertical { padding: 120px 0 120px 0 !important; box-sizing: border-box; }
@@ -414,7 +403,7 @@ transform: translateY(-8px) scale(1.01);
   left: 50%;      
   transform: translateX(-50%);      
   font-size: 12px;      
-  border-radius: 9999px; /* Perfectly round pill box tracking borders */     
+  border-radius: 9999px;
   height: 2.2rem;      
   line-height: 2.2rem;      
   background-color: rgba(0, 0, 0, 0.7);      
@@ -549,7 +538,6 @@ transform: translateY(-8px) scale(1.01);
   background-color: #e4e4e7;    
 }
 
-/* Fix Loading Position in AIO */    
 .loading {      
   position: absolute !important;      
   top: 0 !important;      
@@ -565,7 +553,6 @@ transform: translateY(-8px) scale(1.01);
   align-items: center !important;    
 }
 
-/* Ensure loading children have size */    
 .loader {      
   width: 100px !important;      
   height: 100px !important;      
@@ -626,7 +613,6 @@ transform: translateY(-8px) scale(1.01);
 #step-msg { margin-top: 6px !important; height: 16px !important; }
 #step-msg1 { margin-top: -9px !important; height: 16px !important; }
 
-/* Game Control Grid Styles */    
 .control-grid {      
   display: grid;      
   grid-template-columns: repeat(3, 1fr);      
@@ -637,7 +623,7 @@ transform: translateY(-8px) scale(1.01);
 .control-box {      
   background: rgba(255, 255, 255, 0.03);      
   border: 1px solid rgba(255, 255, 255, 0.05);      
-  border-radius: 10px; /* Smoother border box bounds */     
+  border-radius: 10px;    
   padding: 12px 8px;      
   display: flex;      
   flex-direction: column;      
@@ -682,7 +668,6 @@ transform: translateY(-8px) scale(1.01);
   cursor: pointer;    
 }
 
-/* Switch Component for Control Box */    
 .mini-switch {      
   position: relative;      
   display: inline-block;      
@@ -702,7 +687,6 @@ transform: translateY(-8px) scale(1.01);
 input:checked + .mini-slider { background-color: #ffffff; }    
 input:checked + .mini-slider:before { transform: translateX(14px); background-color: #000000; }
 
-/* Cloud Animations (Unchanged filters) */    
 @keyframes float {      
   0% { transform: translateY(0px); }      
   50% { transform: translateY(-10px); }      
@@ -726,11 +710,10 @@ input:checked + .mini-slider:before { transform: translateX(14px); background-co
 .cloud2 { width: 40px; height: 20px; top: 60px; left: 80px; animation-duration: 2.5s; border-radius: 10px; }    
 .cloud2::before { width: 25px; height: 25px; top: -10px; left: 8px; }
 
-/* Media Player Constraints (Unchanged) */    
 .video {      
   max-width: none !important;      
   max-height: none !important;      
-  filter: none !important; /* Strictly forces color data visibility */
+  filter: none !important;
 }    
 .rotate {      
   transform: rotate(90deg);      
@@ -744,44 +727,34 @@ input:checked + .mini-slider:before { transform: translateX(14px); background-co
   left: 0;      
   z-index: 899;    
 }
-      
-      
-      
-/* TESTING STUFF */
-      
-   /* --- SweetAlert2 Modern Adaptive Theme --- */
+            
 div.swal2-container {
-    background: none !important; /* Forces ONLY the dim backdrop overlay */
+    background: none !important;
     backdrop-filter: blur(0px) !important;
 }
-/* Main Modal Wrapper - Now adapts to content size dynamically */
 .swal2-popup {
     background: #111111 !important;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
     border-radius: 16px !important;
     font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, sans-serif !important;
     padding: 2rem !important;
-    
-    /* Crucial: Removes default 32rem width and lets content dictate size */
     width: auto !important; 
-    max-width: 90vw !important; /* Prevents overflowing small screens */
-    min-width: 400px !important; /* Prevents it from getting awkwardly skinny */
+    max-width: 90vw !important; 
+    min-width: 400px !important;
     
     display: flex !important;
     flex-direction: column !important;
 }
 
-/* Headings / Title */
 .swal2-title {
     color: #ffffff !important;
-    text-align: center !important; /* Added !important to force centering */
+    text-align: center !important;
     font-size: 1rem !important;
     font-weight: 600 !important;
     padding: 0 !important;
     margin-bottom: 1rem !important;
 }
 
-/* Content Area */
 .swal2-html-container {
     color: #cbd5e1 !important;
     font-size: 1rem !important;
@@ -789,11 +762,8 @@ div.swal2-container {
     line-height: 1.6 !important;
     margin: 0 0 1.5rem 0 !important;
     padding: 0 !important;
- /* Respects your default text alignment */
 }
-/* --- Smart-Centered Inputs (Fixes forced visibility) --- */
 
-/* 1. Reset/Hide inputs by default if they don&#39;t belong here */
 .swal2-input, 
 .swal2-textarea, 
 .swal2-select,
@@ -801,7 +771,6 @@ div.swal2-container {
     display: none !important; 
 }
 
-/* 2. ONLY center and display them when SweetAlert2 actively removes the &#39;swal2-input&#39; hiding mechanisms */
 .swal2-popup .swal2-input:not([style*=&#34;display: none&#34;]),
 .swal2-popup .swal2-textarea:not([style*=&#34;display: none&#34;]),
 .swal2-popup .swal2-select:not([style*=&#34;display: none&#34;]),
@@ -813,39 +782,36 @@ div.swal2-container {
     box-sizing: border-box !important;
 }
 
-/* --- Center Action Buttons Container --- */
 .swal2-actions {
     margin-top: 1.5rem !important;
     padding: 0 !important;
     width: 100% !important;
     display: flex !important;
-    justify-content: center !important; /* Kept centered */
+    justify-content: center !important;
     gap: 12px !important;
 }
 
 .swal2-styled {
-    background-color: #333333 !important; /* Modern Dark Charcoal */
-    color: #ffffff !important;            /* Crisp White Text */
+    background-color: #333333 !important; 
+    color: #ffffff !important;            
     margin: 0 !important;
     padding: 0.625rem 1.5rem !important;
     font-size: 0.95rem !important;
     font-weight: 500 !important;
     border-radius: 8px !important;
-    border: 1px solid #444444 !important; /* Subtle border to add depth */
+    border: 1px solid #444444 !important; 
     transition: all 0.15s ease !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Subtle hover effect for the #333 buttons */
 .swal2-styled:hover {
-    background-color: #111111 !important; /* Slightly lighter on hover */
+    background-color: #111111 !important;
     transform: translateY(-1px) !important;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25) !important;
 }
 
-/* Optional: If you want specific buttons to look slightly different while staying dark */
 .swal2-cancel {
-    color: #a0aec0 !important; /* Muted gray text for cancel to differentiate from confirm */
+    color: #a0aec0 !important;
     border-color: #3a3a3a !important;
 }
 
@@ -855,20 +821,16 @@ div.swal2-container {
 }
 
 .swal2-confirm {
-    background-color: #3b82f6 !important; /* Modern Blue */
+    background-color: #3b82f6 !important; 
     color: #ffffff !important;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2) !important;
 }
 
-
-
-/* Dimmed Overlay Background */
 .swal2-backdrop-show {
     background: rgba(0, 0, 0, 0.7) !important;
     backdrop-filter: blur(5px) !important;
 }
 
-/* Form inputs if you use prompts */
 .swal2-input, .swal2-textarea {
     background: #2d2d2d !important;
     border: 1px solid #444 !important;
@@ -877,14 +839,10 @@ div.swal2-container {
     margin: 1rem 0 !important;
 }
       
-   /* --- Modern Fast White Loader (With State Fix) --- */
-
-/* Hide the loader by default on ALL alerts */
 .swal2-loader {
     display: none !important;
 }
 
-/* ONLY style and display the loader when SweetAlert2 actively triggers a loading state */
 .swal2-popup[data-loading=&#34;true&#34;] .swal2-loader,
 .swal2-actions.swal2-loading .swal2-loader {
     display: block !important;
@@ -898,7 +856,6 @@ div.swal2-container {
     animation: custom-swal-spin 0.5s linear infinite !important;
 }
 
-/* Ensure the actions container only centers layout during active load states */
 .swal2-actions.swal2-loading {
     display: flex !important;
     justify-content: center !important;
@@ -906,7 +863,6 @@ div.swal2-container {
     width: 100% !important;
 }
 
-/* --- Dedicated Keyframe Spin Animation --- */
 @keyframes custom-swal-spin {
     0% {
         transform: rotate(0deg);
